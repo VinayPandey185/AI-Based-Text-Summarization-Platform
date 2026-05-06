@@ -1,38 +1,75 @@
+// frontend/src/components/PDFViewer.js
+
 import React, { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
 
-// Use the correct workerSrc from public folder
-pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.js`;
+import {
+  Document,
+  Page,
+  pdfjs,
+} from "react-pdf";
 
-function PDFViewer({ fileUrl, currentPage }) {
-  const [numPages, setNumPages] = useState(null);
+import "react-pdf/dist/Page/TextLayer.css";
+import "react-pdf/dist/Page/AnnotationLayer.css";
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    console.log("✔ Loaded PDF, numPages:", numPages);
+pdfjs.GlobalWorkerOptions.workerSrc =
+  `${process.env.PUBLIC_URL}/pdf.worker.min.js`;
+
+function PDFViewer({ fileUrl }) {
+
+  const [numPages, setNumPages] =
+    useState(null);
+
+  function onDocumentLoadSuccess({
+    numPages,
+  }) {
     setNumPages(numPages);
-  };
+  }
 
   return (
-    <div style={{ 
-      textAlign: "center", 
-      marginTop: "10px", 
-      maxHeight: "80vh", 
-      overflowY: "auto" 
-    }}>
+    <div
+      style={{
+        maxHeight: "80vh",
+        overflowY: "auto",
+        textAlign: "center",
+      }}
+    >
+
       <Document
         file={fileUrl}
         onLoadSuccess={onDocumentLoadSuccess}
         loading="Loading PDF..."
-        renderMode="canvas"
       >
-        {/* Always keep pageNumber safe: fallback to page 1 if currentPage invalid */}
-        <Page
-          key={`page_${currentPage}`}
-          pageNumber={Math.min(currentPage, numPages || 1)}
-          width={600}
-        />
+
+        {Array.from(
+          new Array(numPages),
+          (el, index) => (
+            <div
+              key={`page_${index + 1}`}
+              style={{
+                marginBottom: "25px",
+              }}
+            >
+
+              <Page
+                pageNumber={index + 1}
+                width={600}
+              />
+
+              <p
+                style={{
+                  marginTop: "10px",
+                  color: "#6b7280",
+                  fontSize: "14px",
+                }}
+              >
+                Page {index + 1} of {numPages}
+              </p>
+
+            </div>
+          )
+        )}
+
       </Document>
-      {numPages && <p>Page {currentPage} of {numPages}</p>}
     </div>
   );
 }
