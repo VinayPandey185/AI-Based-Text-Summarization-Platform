@@ -1,47 +1,47 @@
-# 📘 AI-Based PDF & Text Summarization Platform
+# AI-Based PDF & Text Summarization Platform
 
-An AI-powered full-stack web application that allows users to:
+An AI-powered full-stack web application that allows users to upload PDF documents, generate AI-powered summaries, summarize custom text input, download summaries as PDF reports, and interact with uploaded PDFs using an intelligent chat system.
 
-- Upload PDF documents
-- Generate AI summaries from PDFs
-- Summarize custom text input
-- Chat with uploaded PDFs using AI
-- View multi-page PDFs directly in the browser
-
-Built using React.js, Node.js, Express.js, and Groq AI.
+Built using React.js, Node.js, Express.js, Groq AI, and Natural Language Processing (NLP).
 
 ---
 
-# 🚀 Features
+# Features
 
-## ✅ PDF Upload & Parsing
-- Upload PDF files
+## PDF Upload & Parsing
+- Upload PDF documents directly from the browser
 - Extract text automatically from uploaded PDFs
 - Support for multi-page PDF viewing
 
-## ✅ AI PDF Summarization
-- Generate concise summaries from uploaded PDFs
-- Powered by Groq LLM API
+## AI PDF Summarization
+- Generate concise AI-powered summaries from uploaded PDFs
+- Uses Groq LLM API for intelligent summarization
 
-## ✅ AI Text Summarization
-- Paste custom text
+## AI Text Summarization
+- Paste custom text into the application
 - Generate instant AI summaries
 
-## ✅ Chat With PDF
+## Chat With PDF
 - Ask questions related to uploaded PDF documents
-- AI responds based on PDF content
+- AI responds using extracted PDF content
 
-## ✅ Modern UI
-- Clean and responsive user interface
-- Professional dashboard-style layout
-- Multi-panel PDF and chat experience
+## Download Summary as PDF
+- Export AI-generated summaries as professional PDF reports
+- Dynamic report title generation
+- Clean formatted PDF layout
+
+## Modern UI
+- Clean and responsive dashboard-style interface
+- Multi-panel PDF viewer and AI chat layout
+- Professional and user-friendly design
 
 ---
 
-# 🛠️ Tech Stack
+# Tech Stack
 
 ## Frontend
 - React.js
+- React Hooks
 - react-pdf
 
 ## Backend
@@ -56,9 +56,14 @@ Built using React.js, Node.js, Express.js, and Groq AI.
 - pdf-parse
 - multer
 
+## Development Tools
+- Visual Studio Code
+- Git & GitHub
+- Postman
+
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```bash
 AI-Based-Text-Summarization-Platform/
@@ -79,9 +84,9 @@ AI-Based-Text-Summarization-Platform/
 
 ---
 
-# ⚙️ Installation & Setup
+# Installation & Setup
 
-## 1️⃣ Clone Repository
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/VinayPandey185/AI-Based-Text-Summarization-Platform.git
@@ -89,20 +94,20 @@ git clone https://github.com/VinayPandey185/AI-Based-Text-Summarization-Platform
 
 ---
 
-# 🔹 Backend Setup
+# Backend Setup
 
 ```bash
 cd backend
 npm install
 ```
 
-## Create `.env` file
+## Create `.env` File
 
 ```env
 GROQ_API_KEY=your_api_key_here
 ```
 
-## Run Backend
+## Run Backend Server
 
 ```bash
 node server.js
@@ -116,7 +121,7 @@ http://localhost:5000
 
 ---
 
-# 🔹 Frontend Setup
+# Frontend Setup
 
 ```bash
 cd frontend
@@ -132,15 +137,15 @@ http://localhost:3000
 
 ---
 
-# 🖼️ Application Screenshots
+# Application Screenshots
 
-## Main UI
+## Main Dashboard UI
 
 ![UI](Screenshots/UI.png)
 
 ---
 
-## PDF Uploaded & Summarized
+## PDF Upload & AI Summary
 
 ![PDF Upload](Screenshots/file_uploaded_UI.png)
 
@@ -152,41 +157,62 @@ http://localhost:3000
 
 ---
 
-# 💡 Example Use Cases
+# Example Use Cases
 
 - Research paper summarization
 - Academic PDF analysis
 - AI-powered document assistant
 - Notes summarization
 - PDF-based question answering
+- Business report summarization
 
 ---
 
-# ✨ Future Improvements
+# Future Improvements
 
 - Real page citation support
 - Semantic vector search
-- Download summary as PDF
-- Dark mode support
 - User authentication
+- Multiple document support
 - Cloud deployment
+- Dark mode support
+- Database integration
 
 ---
 
-# 👨‍💻 Author
+# Author
 
-Vinay Pandey
+**Vinay Pandey**
 
-GitHub:
+GitHub:  
 https://github.com/VinayPandey185
 
 ---
 
-# 📌 Note
+# Project Highlights
 
-This project was developed as part of an AI/NLP-based assignment project and demonstrates:
-- PDF text extraction
-- NLP summarization
-- AI integration
+This project demonstrates:
+
+- AI integration with Groq LLM
+- PDF text extraction & processing
+- NLP-based summarization
+- Document-based question answering
 - Full-stack application development
-- Interactive document chat system
+- Interactive PDF viewing
+- REST API integration
+- Professional UI/UX implementation
+- AI summary PDF export feature
+
+---
+
+# Note
+
+This project was developed as part of an AI/NLP-based assignment project and demonstrates practical implementation of:
+
+- Artificial Intelligence integration
+- NLP summarization
+- PDF document processing
+- AI-powered document chat
+- Full-stack web application development
+- Modern React frontend architecture
+- REST API backend integration

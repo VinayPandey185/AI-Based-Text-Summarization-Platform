@@ -1,5 +1,3 @@
-// frontend/src/components/Chat.js
-
 import React, { useState } from "react";
 
 function Chat() {
@@ -127,7 +125,7 @@ function Chat() {
                 wordWrap: "break-word",
               }}
             >
-              {msg.text}
+              {msg.text.replace(/\*/g, "")}
             </span>
           </div>
         ))}
