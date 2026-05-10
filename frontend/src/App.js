@@ -10,7 +10,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [pdfName, setPdfName] = useState("");
 
-  const BACKEND_URL = "http://localhost:5000";
+  //const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL =
+    "https://ai-based-text-summarization-platform-2.onrender.com";
 
   // PDF UPLOAD
 
