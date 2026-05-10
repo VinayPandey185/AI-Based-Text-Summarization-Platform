@@ -58,6 +58,8 @@ function App() {
   const handleSummarizeText = async () => {
     if (!textInput.trim()) return;
 
+    setPdfName("");
+
     try {
       setLoading(true);
 
@@ -219,19 +221,32 @@ function App() {
               // ===== TITLE =====
 
               const title = pdfName
-                ? pdfName.replace(".pdf", "").replace(/_/g, " ") + " Summary"
-                : "AI Generated Summary";
-
+                ? pdfName
+                    .replace(".pdf", "")
+                    .replace(/_/g, " ")
+                    .replace(/\breport\b/i, "")
+                    .trim() + " Report Summary"
+                : "Text Summarizer Report";
               // ===== CLEAN SUMMARY =====
 
-              let cleanSummary = summary.replace(/\*\*/g, "").trim();
+              let cleanSummary = summary
+                .replace(/\*\*/g, "")
+                .replace(/\*/g, "")
+                .trim();
 
-              const summaryLines = cleanSummary.split("\n");
+              // ===== PDF Upload Summary =====
+              if (pdfName) {
+                const summaryLines = cleanSummary.split("\n");
 
-              summaryLines.shift();
+                if (summaryLines.length > 1) {
+                  summaryLines.shift();
+                }
 
-              cleanSummary = "Project Overview:\n\n" + summaryLines.join("\n");
+                cleanSummary =
+                  "Project Overview:\n\n" + summaryLines.join("\n");
+              }
 
+              // ===== DYNAMIC TITLE REMOVAL =====
               const escapedTitle = title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
               const titleRegex = new RegExp(`^${escapedTitle}\\s*`, "i");
