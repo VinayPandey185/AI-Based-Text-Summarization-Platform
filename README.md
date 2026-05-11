@@ -6,12 +6,27 @@ Built using React.js, Node.js, Express.js, Groq AI, and Natural Language Process
 
 ---
 
-# Features
+## Live Deployment
 
-## PDF Upload & Parsing
-- Upload PDF documents directly from the browser
+The project has been successfully deployed and is accessible online.
+
+**Live Application:**  
+https://ai-based-text-summarization-platfor.vercel.app/
+
+## Features
+
+The deployed platform allows users to:
+
+- Upload PDF documents
 - Extract text automatically from uploaded PDFs
-- Support for multi-page PDF viewing
+- Generate AI-powered summaries
+- Summarize custom text
+- Chat with uploaded PDF documents
+- View multi-page PDFs directly in the browser
+- Download summaries as professional PDF reports
+
+
+
 
 ## AI PDF Summarization
 - Generate concise AI-powered summaries from uploaded PDFs

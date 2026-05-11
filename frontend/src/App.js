@@ -289,7 +289,6 @@ function App() {
                 // ===== DYNAMIC HEADING DETECTION =====
 
                 const isHeading =
-                  // Main headings with colon
                   line.trim().endsWith(":") ||
                   // Standalone headings
                   (line.length < 35 &&
