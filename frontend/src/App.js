@@ -89,7 +89,8 @@ function App() {
     <div
       style={{
         display: "flex",
-        height: "100vh",
+        flexDirection: window.innerWidth < 768 ? "column" : "row",
+        minHeight: "100vh",
         background: "linear-gradient(135deg, #eef4ff 0%, #f8fbff 100%)",
         fontFamily: "Arial, sans-serif",
       }}
@@ -101,7 +102,7 @@ function App() {
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          padding: "24px",
+          padding: window.innerWidth < 768 ? "16px" : "24px",
           background: "rgba(255,255,255,0.92)",
           borderRight: "1px solid #dbe4ff",
           overflowY: "auto",
@@ -112,7 +113,7 @@ function App() {
 
         <h1
           style={{
-            fontSize: "32px",
+            fontSize: window.innerWidth < 768 ? "24px" : "32px",
             fontWeight: "700",
             marginBottom: "8px",
             display: "flex",
@@ -330,26 +331,17 @@ function App() {
               doc.save(fileName);
             }}
             style={{
+              width: "100%",
               padding: "14px",
-
               background: "linear-gradient(90deg, #2563eb, #7c3aed)",
-
               color: "white",
-
               border: "none",
-
               borderRadius: "12px",
-
               cursor: "pointer",
-
               fontWeight: "600",
-
               fontSize: "15px",
-
               marginBottom: "20px",
-
               boxShadow: "0 6px 18px rgba(37,99,235,0.25)",
-
               transition: "0.2s",
             }}
           >
@@ -367,7 +359,7 @@ function App() {
       <div
         style={{
           flex: 1,
-          padding: "24px",
+          padding: window.innerWidth < 768 ? "16px" : "24px",
           overflowY: "auto",
           background: "linear-gradient(180deg, #f9fbff 0%, #eef5ff 100%)",
         }}
